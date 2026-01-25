@@ -1,1 +1,173 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --primary-color: #f78308;
+    --secondary-color: #6366F1;
+    --background-color: #F9FAFB;
+    --text-color: #3b2402fc;
+    --muted-text-color: #6B7280;
+    --border-color: #E5E7EB;
+    --hover-bg-color: #E0E7FF;
+    --font-family: 'Inter', 'Roboto', sans-serif;
+}
+[data-theme="dark"] {
+    --ui-base: #1F2937;
+    --ui-secondary: #374151;
+    --text-primary: #F3F4F6;
+    --border: #4B5563;
+    --shadow-1: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-2: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-3: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.06);
+}
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: var(--font-family);
+} 
+html, body {
+    height: 100vh;
+    background-color: var(--ui-base);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+h4 {
+    font-weight: 500;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+
+}
+button {
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-family);
+}
+input {
+   width: 100%;
+   overflow: hidden;
+   background: transparent; 
+   height: 40px;
+   font-size: 14px;
+   padding: 0 10px;
+   color: var(--text-color);
+
+
+}
+input::placeholder {
+    color: var(--muted-text-color);
+    opacity: 1;
+}
+.primary {
+    color: var(--primary-color);
+}
+.muted {
+    color: var(--muted-text-color);
+}
+.success {
+    color: var(--succes-color);
+}
+.danger {
+    color: var(--danger-color);
+}
+.warning {
+    color: var(--warning-color);
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile img {
+    width: 3.0rem;
+    height: 3.0rem;
+    min-width: 3.0rem;
+    min-height: 3.0rem;
+    max-width: 3.0rem;
+    max-height: 3.0rem;
+    overflow: hidden;
+    border-radius: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.profile .details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile .details h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.profile .details p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted-text-color);
+}
+.icon-wrapper {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    background-color: var(--ui-secondary);
+    color: var(--text-color);
+    flex-shrink: 0;
+}
+.rounded-icon-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ui-secondary);
+    cursor: pointer;
+}
+.rounded-icon-butn .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    
+}
+.btn {
+    padding : 10px 15px;
+    border-radius: 0.5rem;
+    font-size: 14px;
+    background: var(--ui-secondary);
+    display: inline-flex;
+}
+.btn.primary {
+    background: var(--primary-color);
+    color: white;
+}

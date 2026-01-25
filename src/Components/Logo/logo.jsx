@@ -1,11 +1,11 @@
 import './logo.css';
-import {Loader} from 'lucide-react';
+import {Crown} from 'lucide-react';
 const Logo = () => {
     return (
         <div className="logo">
-            <Loader size={32} className="primary" />
+            <Crown size={30} className="primary" />
             <h1>
-                <span className="primary">Lalita</span>
+                Mai<span className="primary">tama</span>
             </h1>
         </div>
     );
