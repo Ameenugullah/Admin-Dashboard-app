@@ -5,7 +5,7 @@ const Logo = () => {
         <div className="logo">
             <Crown size={30} className="primary" />
             <h1>
-                Mai<span className="primary">tama</span>
+                Fast<span className="primary">pay</span>
             </h1>
         </div>
     );
