@@ -5,7 +5,7 @@
     --primary-color: #f78308;
     --secondary-color: #6366F1;
     --background-color: #F9FAFB;
-    --text-color: #3b2402fc;
+    --text-color: #020202fc;
     --muted-text-color: #6B7280;
     --border-color: #E5E7EB;
     --hover-bg-color: #E0E7FF;
@@ -41,11 +41,11 @@ a {
     color: inherit;
 }
 h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
 }
 h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
 }
 h4 {
