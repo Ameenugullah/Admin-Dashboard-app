@@ -1,0 +1,147 @@
+/* Base styles - work well for mobile-first approach */
+.send-money {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.row-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.row-balance h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #27ae60; /* Primary color for balance */
+  margin: 0;
+}
+
+.success {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.add-fund-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #3498db; /* Blue button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.add-fund-btn:hover {
+  background-color: #2980b9;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.amount {
+  margin-top: 20px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.muted {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.price-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.currency {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+  color: #7f8c8d;
+}
+
+input {
+  border: none;
+  font-size: 20px;
+  outline: none;
+  flex-grow: 1;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+/* Specific flag styling */
+.row .profile img {
+  width: 24px;
+  height: 24px;
+  margin: 0 4px;
+  border-radius: 50%;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* For screens smaller than 500px (smartphones) */
+@media (max-width: 500px) {
+  .send-money {
+    margin: 0; /* No margin on very small screens to use full width */
+    border-radius: 0; /* Optional: Make it full screen on mobile */
+    padding: 15px;
+  }
+
+  .row-balance {
+    flex-direction: column; /* Stack balance and button vertically on mobile */
+    align-items: flex-start;
+  }
+
+  .row-balance h1 {
+    margin-bottom: 10px; /* Add space between balance text and button */
+  }
+
+  .add-fund-btn {
+    width: 100%; /* Make the button full width */
+    justify-content: center;
+  }
+}

@@ -1,12 +1,13 @@
 .main {
-    padding-left: 250px;
-    width: 100%;
+    margin-left: 260px;
+    width: calc(100% - 260px);
     max-width: 100vw;
 }
 .container {
     display: grid;
     grid-template-columns: 400px auto;
-    padding: 70px;
+    padding: 30px 70px 70px 70px;
+    gap: 40px;
 }
 .container .column {
     padding: 20px;
@@ -42,7 +43,11 @@
 }
 @media only screen and (max-width: 1180px) {
     .main {
-        padding-left: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+    .navbar {
+        margin-left: 0;
     }
     
 }

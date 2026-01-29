@@ -25,7 +25,7 @@ const Card = () => {
                     <p>EXPIRES</p>
                 </div>
                 <div className="row card-name">
-                    <p>Abdulmalik</p>
+                    <p>AMINU GULLAH</p>
                     <p>01/26</p>
                 </div>
             </div>

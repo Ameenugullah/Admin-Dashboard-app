@@ -1,7 +1,12 @@
 .logo {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 5px;
     font-family: 'Inter', sans-serif;
-    
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        display: flex;
+    }
 }

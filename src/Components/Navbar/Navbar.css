@@ -5,6 +5,11 @@
     justify-content: space-between;
     gap: 30px;
     padding: 16px 24px;
+    margin-left: 100px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 .navbar .logo {
     margin-right: auto;
