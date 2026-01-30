@@ -4,6 +4,7 @@ import Sidebar from '../Components/Sidebar';
 import VisaCard from '../Components/VisaCard/Card';
 import { useState } from 'react';
 import SendMoney from '../Components/SendMoney/SendMoney';
+import QuickTransfer from '../Components/QuickTransfer/QuickTransfer';
 
 
 const Dashboard = () => {
@@ -17,6 +18,7 @@ const Dashboard = () => {
                 <div className="column">
                     <VisaCard/>
                     <SendMoney/>
+                    <QuickTransfer/>
                 </div>
                 <div className="column"></div>
             </section>
