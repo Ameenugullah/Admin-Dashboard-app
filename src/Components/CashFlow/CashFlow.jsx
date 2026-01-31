@@ -14,10 +14,10 @@ const CashFlow = () => {
     }
     const config = {
         data:{
-            labels:["Jan", "Feb", "Mar", "May", "Jun", "Jul", "Aug", "Sep", "Oct",],
+            labels:["Jan", "Feb", "April", "Mar", "May", "Jun", "Jul", "Aug", "Sep", "Oct",],
             datasets:[
                 {
-                  data:[1200, 1900, 3000, 2500, 3200, 2800, 3500, 4000, 4500],
+                  data:[1200, 1900, 3000, 2500, 3200, 2800, 3500, 4000, 4500, 5000],
                   borderWidth:2,
                   borderColor: '#06538eff',
                   lineTension: 0.8,
@@ -33,7 +33,16 @@ const CashFlow = () => {
                 },   
         ],
         },
-        options:{},
+        options:{
+             scales:{
+                y: {beginAtZero: true},
+             },
+             plugins:{
+                lengend:{
+                    display: false,
+                }
+             }
+        },
     }
 
     return (
@@ -52,7 +61,7 @@ const CashFlow = () => {
             <div className="row trending-report">
                 <div className="rounded-icon-btn btn-primary">
                         <TrendingUp className="icon"/>
-                    </div>
+                     </div>
                     <h3>Savings</h3>
                     <TrendingUp className="icon primary"/>
                     <p className="success">+2.52%</p>
