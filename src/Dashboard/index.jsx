@@ -2,10 +2,10 @@ import './Dashboard.css';
 import Navbar from '../Components/Navbar/Navbar';
 import Sidebar from '../Components/Sidebar';
 import VisaCard from '../Components/VisaCard/Card';
-import { useState } from 'react';
 import SendMoney from '../Components/SendMoney/SendMoney';
 import QuickTransfer from '../Components/QuickTransfer/QuickTransfer';
-
+import CashFlow from '../Components/CashFlow/CashFlow';
+import { useState } from 'react';
 
 const Dashboard = () => {
     const [open, _setOpen] = useState(false);
@@ -19,6 +19,7 @@ const Dashboard = () => {
                     <VisaCard/>
                     <SendMoney/>
                     <QuickTransfer/>
+                    <CashFlow/>
                 </div>
                 <div className="column"></div>
             </section>
