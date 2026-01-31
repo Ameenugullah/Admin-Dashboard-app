@@ -5,6 +5,7 @@ import VisaCard from '../Components/VisaCard/Card';
 import SendMoney from '../Components/SendMoney/SendMoney';
 import QuickTransfer from '../Components/QuickTransfer/QuickTransfer';
 import CashFlow from '../Components/CashFlow/CashFlow';
+import StatisticsGrid from '../Components/StatisticsGrid/StatisticsGrid';
 import { useState } from 'react';
 
 const Dashboard = () => {
@@ -20,6 +21,7 @@ const Dashboard = () => {
                     <SendMoney/>
                     <QuickTransfer/>
                     <CashFlow/>
+                    <StatisticsGrid/>
                 </div>
                 <div className="column"></div>
             </section>
