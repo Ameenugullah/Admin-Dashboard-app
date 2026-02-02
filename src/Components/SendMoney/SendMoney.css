@@ -1,199 +1,186 @@
-/* Base styles matching the image aesthetic */
+/* Send Money – responsive, balanced, dashboard-safe */
+
 .send-money {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Deeper shadow for card effect */
-  font-family: Arial, sans-serif;
-  color: #333;
-}
-
-.title {
-  font-size: 16px; /* Smaller title font size matching the image */
-  font-weight: normal;
-  margin-bottom: 20px;
-  color: #7f8c8d; /* Muted color */
-  border-bottom: none; /* No bottom border */
-  padding-bottom: 0;
-}
-
-.row-balance {
+  width: 100%;
+  max-width: 420px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Title */
+.send-money .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Balance row */
+.balance-row {
+  display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #fff; /* White background for this section as well */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for inner card */
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.row-balance h1 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #000; /* Darker color for main balance */
-  margin: 0;
+.balance-info h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
-.success {
-  color: #27ae60;
-  font-weight: bold;
-  font-size: 14px; /* Smaller success text */
+.stat {
+  font-size: 0.85rem;
 }
 
+.success-text {
+  color: var(--success);
+  font-weight: 600;
+}
+
+/* Add fund button */
 .add-fund-btn {
   display: flex;
   align-items: center;
-  padding: 8px 10px; /* Smaller, rounded button */
-  background-color: #f9f9f9;
-  color: #333;
-  border: none;
-  border-radius: 12px; /* Pill shape */
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--primary-light);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
-  margin-left: 15px;
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .add-fund-btn:hover {
-  background-color: #eee;
+  background: var(--primary);
+  color: #fff;
 }
 
-.icon {
-  width: 30px; /* Smaller icon */
-  height: 30px;
-  margin-right: 6px;
+.card-icon {
+  width: 26px;
 }
 
-.amount {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #fff;
+/* Amount card */
+.amount-card {
+  background: var(--background);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.input-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Small profile images (sender & receiver) */
+.profile-sm img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 0.55rem 0.75rem;
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Align content to edges */
-  margin-bottom: 15px;
-  padding-top: 15px; /* Add padding here for separation from amount field */
+.currency-symbol {
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
-.profile img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.muted {
-  color: #7f8c8d;
-  font-size: 14px;
-}
-
-.price-input {
-  display: flex;
-  align-items: center;
-  border: none; /* No border, just use padding/background */
-  padding: 0;
-}
-
-.currency {
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 5px;
-  color: #000000; /* Darker currency symbol */
-}
-
-input {
+.input-group input {
+  flex: 1;
   border: none;
-  font-size: 24px;
   outline: none;
-  flex-grow: 1;
+  font-size: 0.95rem;
+  min-width: 0;
 }
 
-.row {
+.flag-group {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.flag {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+/* Receiver */
+/* Receiver */
+.receiver-card {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  gap: 0.75rem;
 }
 
-/* Specific flag styling */
-.row .profile img {
-  width: 24px;
-  height: 24px;
-  margin: 20px 4px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-1);
-}
-.receiver {
-    margin-top: 25px;
-  margin-left: 10px;
-  font-size: 14px;
-  color: #333;
-}
-.rounded-icon-btn {
-    background-color: #92c3f8;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+
+.receiver-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-/* --- Styling for the main Send Money button --- */
+.receiver-info .name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
 
-.btn {
-  padding: 15px; /* Taller button */
-  border-radius: 10px; /* Rounded corners */
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+.add-btn {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
   border: none;
-  /* Updated width and alignment */
-  max-width: 200px; /* Reduced width */
-  margin: 20px auto 0 auto; /* Center the button horizontally and add top margin */
-  display: block; /* Ensures margin auto works for centering */
-  text-align: center; /* Centers the text within the button */
+  background: var(--primary-light);
+  cursor: pointer;
 }
 
-.primary-btn {
-  background-color: #007bff; /* Bright blue color from image */
-  color: white;
+.add-btn:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
-.primary-btn:hover {
-  background-color: #0056b3;
+/* CTA button */
+.send-money-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* --- Responsive Adjustments --- */
+.send-money-btn:hover {
+  background: var(--primary-hover);
+}
 
-/* For screens smaller than 500px (smartphones) */
-@media (max-width: 500px) {
+/* Responsive */
+@media (max-width: 640px) {
   .send-money {
-    margin: 0; /* Remove margins to use full screen width */
-    border-radius: 0;
-    padding: 15px;
-  }
-
-  .row-balance {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start;
-  }
-
-  .row-balance h1 {
-    margin-bottom: 10px;
-  }
-
-  .add-fund-btn {
-    width: 100%; /* Make button full width for easy tapping */
-    justify-content: center;
-  }
-  
-  /* On mobile, maybe you want the main button to be full width again? */
-  .btn {
     max-width: 100%;
   }
 }

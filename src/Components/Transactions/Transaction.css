@@ -1,0 +1,103 @@
+.transactions-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Title */
+.transactions-card .title-sm {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+/* Table wrapper (mobile safety) */
+.transactions-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 12px 10px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.transactions-table thead th {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.transactions-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.transactions-table tbody tr:hover {
+  background: var(--background);
+}
+
+/* Avatar */
+.transaction-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Amount */
+.amount {
+  font-weight: 600;
+}
+
+/* Status badge */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+/* Status colors */
+.status-badge.success {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.status-badge.failed {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.status-badge.processing {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .transactions-card {
+    padding: 16px;
+  }
+
+  .transactions-table {
+    min-width: 560px;
+  }
+}

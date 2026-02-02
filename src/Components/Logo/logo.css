@@ -1,12 +1,28 @@
 .logo {
-    display: none;
+    display: flex;
     align-items: center;
-    gap: 5px;
-    font-family: 'Inter', sans-serif;
+    gap: 10px;
+    user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
-    .logo {
-        display: flex;
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    color: var(--primary); /* Uses your Orange */
+}
+
+.primary-text {
+    color: var(--primary);
+}
+
+/* Rule: Hide logo in Navbar on Desktop (Screens wider than 1024px) */
+@media (min-width: 1025px) {
+    .nav-logo {
+        display: none !important;
     }
 }

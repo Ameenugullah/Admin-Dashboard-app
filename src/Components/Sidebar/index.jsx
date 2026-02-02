@@ -1,76 +1,68 @@
 import "./sidebar.css";
 import Logo from "../Logo/logo";
-import { ChartColumnBig, HandHelping, LayoutDashboard, MessageCircle, MonitorDot, ScrollText, Settings, SunMoon, Wallet } from "lucide-react";
-import Profile from "../../assets/profile-2.jpg";
-const Sidebar = ({open}) => {
+import { 
+    ChartColumnBig, HandHelping, LayoutDashboard, MessageCircle, 
+    MonitorDot, ScrollText, Settings, SunMoon, Wallet 
+} from "lucide-react";
+import Profile from "../../assets/profile2.jpg";
+
+const Sidebar = ({ open }) => {
     return (
-        <aside className={`sidebar ${open &&  "open"}`}>
-            <Logo/>
-            <div className="tabs">
-                <div className="tabs">
-                    <a href="#" className="item">
-                        <LayoutDashboard />
-                        <h3>Dashboard</h3>
-                    </a>
-                </div>
-                 <div className="tabs">
-                    <a href="#" className="item">
-                        <MessageCircle />
-                        <h3>Messages</h3>
-                        <div className="count">10+</div>
-                    </a>
-                </div>
-                 <div className="tabs">
-                    <a href="#" className="item">
-                        <ScrollText />
-                        <h3>Invoices</h3>
-                    </a>
-                </div>
-                 <div className="tabs">
-                    <a href="#" className="item">
-                        <Wallet />
-                        <h3>Wallet</h3>
-                    </a>
-                </div>
-                 <div className="tabs">
-                    <a href="#" className="item">
-                        <ChartColumnBig />
-                        <h3>Analytics</h3>
-                    </a>
-                </div>
-                 <div className="tabs">
-                    <a href="#" className="item">
-                        <MonitorDot />
-                        <h3>My Activity</h3>
-                    </a>
-                </div>
-                 <div className="tabs">
-                    <a href="#" className="item">
-                        <Settings />
-                        <h3>Settings</h3>
-                    </a>
-                </div>
+        // The "open" class controls visibility on mobile
+        <aside className={`sidebar ${open ? "open" : ""}`}>
+            <div className="sidebar-top">
+                <Logo />
             </div>
-            <div className="button">
-                <div className="items-tabs">
-                    <HandHelping />
-                    <h3>Help Center</h3>
+
+            <nav className="tabs">
+                <a href="#" className="item active">
+                    <LayoutDashboard className="icon" />
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" className="item">
+                    <MessageCircle className="icon" />
+                    <span>Messages</span>
+                    <span className="count">10</span>
+                </a>
+                <a href="#" className="item">
+                    <ScrollText className="icon" />
+                    <span>Invoices</span>
+                </a>
+                <a href="#" className="item">
+                    <Wallet className="icon" />
+                    <span>Wallet</span>
+                </a>
+                <a href="#" className="item">
+                    <ChartColumnBig className="icon" />
+                    <span>Analytics</span>
+                </a>
+                <a href="#" className="item">
+                    <MonitorDot className="icon" />
+                    <span>My Activity</span>
+                </a>
+                <a href="#" className="item">
+                    <Settings className="icon" />
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div className="sidebar-footer">
+                <div className="footer-item">
+                    <HandHelping className="icon" />
+                    <span>Help Center</span>
                 </div>
-                <div className="items-tabs">
-                    <SunMoon />
-                    <h3>Theme</h3>
+                <div className="footer-item">
+                    <SunMoon className="icon" />
+                    <span>Theme</span>
                 </div>
-                 <div className="user">
-                  <div className="profile">
+                
+                <div className="user-profile">
                     <img src={Profile} alt="User Profile" />
                     <div className="details">
-                        <h4 className="name">Abdulmalik Aminu</h4>
+                        <h4 className="name">Abdulmalik</h4>
                         <p className="role">Admin</p>
                     </div>
-                   
-                  </div>
                 </div>
-
             </div>
         </aside>
     );

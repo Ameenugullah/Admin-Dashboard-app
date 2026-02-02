@@ -1,165 +1,163 @@
+/* Visa Card – premium, responsive, no overflow */
+
 .visa-card {
-    height: 230px;
-    color: var(--text-color);
-    perspective: 1000px;
-    width: 350px;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 16 / 10;
+  perspective: 1200px;
 }
 
 .visa-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
 }
 
-.visa-card:hover .visa-card-inner {
+/* Optional hover flip (desktop only) */
+@media (hover: hover) {
+  .visa-card:hover .visa-card-inner {
     transform: rotateY(180deg);
+  }
 }
 
-.visa-card .front, 
+.visa-card .front,
 .visa-card .back {
-    width: 350px;
-    height: 200px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #f78308, #ffb347);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    padding: 20px 30px;
-    backface-visibility: hidden;
-    box-shadow: var(--shadow-3);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 1.4rem;
+  box-sizing: border-box;
+  color: #fff;
+  overflow: hidden;
 }
 
+/* FRONT */
 .visa-card .front {
-    z-index: 2;
+  background: linear-gradient(135deg, #ff782d, #e66a25);
 }
 
+.map-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.12;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chip-icon {
+  width: 42px;
+}
+
+.visa-icon {
+  width: 64px;
+}
+
+.card-no {
+  margin-top: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.card-holder-labels {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+
+.card-name {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* BACK */
 .visa-card .back {
-    transform: rotateY(180deg);
-    background: linear-gradient(135deg, #34495e, #2c3e50);
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  transform: rotateY(180deg);
 }
 
-.visa-card .map-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.08;
-    z-index: 0;
+.magnetic-bar {
+  height: 42px;
+  background: #000;
+  margin-top: 0.8rem;
 }
 
-.visa-card .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
+.cvv-section {
+  margin-top: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.visa-card .icon {
-    height: 40px;
-    object-fit: contain;
+.pattern-area {
+  flex: 1;
+  height: 38px;
+  background: #fff;
+  overflow: hidden;
 }
 
-/* Front Card Styling */
-.visa-card .card-no {
-    gap: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 2px;
+.pattern-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.visa-card .card-no p {
-    margin: 0;
+.cvv-box {
+  width: 52px;
+  height: 38px;
+  background: #e5e7eb;
+  color: #111;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
-.visa-card .card-holder {
-    font-size: 11px;
-    opacity: 0.8;
-    gap: 40px;
+.card-info-text {
+  margin-top: 1.2rem;
+  font-size: 0.65rem;
+  opacity: 0.8;
 }
 
-.visa-card .card-holder p {
-    margin: 0;
+.footer-row {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.visa-card .card-name {
-    font-size: 14px;
-    font-weight: 600;
-    gap: 40px;
+.visa-icon-small {
+  width: 44px;
 }
 
-.visa-card .card-name p {
-    margin: 0;
+.sig-text {
+  font-size: 0.6rem;
+  opacity: 0.7;
 }
 
-/* Back Card Styling */
-.visa-card .bar {
-    width: 100%;
-    height: 40px;
-    background: #000;
-    margin-top: 20px;
-    border-radius: 4px;
-    position: relative;
-    z-index: 2;
-}
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .visa-card {
+    max-width: 100%;
+  }
 
-.visa-card .cvv-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 15px;
-    position: relative;
-    z-index: 2;
-}
-
-.visa-card .cvv-section img {
-    width: 400px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.visa-card .cvv-section p {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: white;
-}
-
-.visa-card .card-text {
-    font-size: 11px;
-    opacity: 0.9;
-    line-height: 1.5;
-    position: relative;
-    z-index: 2;
-}
-
-.visa-card .card-text p {
-    margin: 0;
-}
-
-.visa-card .signature {
-    font-size: 10px;
-    opacity: 0.8;
-    margin-top: 10px;
-    position: relative;
-    z-index: 2;
-}
-
-.visa-card .signature p {
-    margin: 0;
-}
-
-.visa-card .signature .icon {
-    height: 30px;
+  .card-no {
+    font-size: 1rem;
+  }
 }

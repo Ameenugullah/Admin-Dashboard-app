@@ -1,109 +1,94 @@
-/* Container for the main card */
+/* Quick Transfer – compact, aligned, right-column safe */
+
 .quick-transfer-card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 20px auto;
-  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-/* General utility classes */
-.muted {
-  color: #7f8c8d;
-  font-size: 14px;
+.title-sm {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
 }
 
-.row {
+/* Balance */
+.balance-info-transfer h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Input */
+.transfer-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-row {
   display: flex;
   align-items: center;
-}
-
-/* Card Title */
-.quick-transfer-card h2 {
-  font-size: 16px;
-  color: #7f8c8d;
-  margin-bottom: 20px;
-  font-weight: normal;
-}
-
-/* Available Balance Section */
-.available-balance {
-  justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 15px 0; /* Add vertical padding */
-}
-
-.available-balance h1 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #333;
-  margin: 0;
-}
-
-/* Transfer Input Section */
-.transfer-input {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #fff;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--background);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
-.transfer-input .row {
-  align-items: center;
-}
-
-.currency {
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 5px;
-  color: #333;
-}
-
-input {
+.input-row input {
+  flex: 1;
   border: none;
-  font-size: 24px;
   outline: none;
-  flex-grow: 1;
+  background: transparent;
+  min-width: 0;
 }
 
-/* Profile Image Styling (Flags) */
-.profile img {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  margin: 0 4px;
-}
-
-/* Action Buttons Section (Send, Receiver, Invoice, More) */
-.action-buttons {
+.flag-stack {
   display: flex;
-  justify-content: space-around; 
-  text-align: center;
-  margin-top: 30px;
+  gap: 0.25rem;
 }
 
-.action-buttons .item {
+.flag-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+/* Actions */
+.action-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.action-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.35rem;
+  border: none;
+  background: transparent;
   cursor: pointer;
 }
 
-.rounded-icon-btn {
-  width: 50px;
-  height: 50px;
-  background-color: #f1f1f1; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
-  color: #007bff; /* Blue color for icons */
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
 }
 
-.rounded-icon-btn svg { /* Assuming you use SVGs like <Send/> */
-    width: 20px;
-    height: 20px;
+.action-item p {
+  font-size: 0.7rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .quick-transfer-card {
+    max-width: 100%;
+  }
 }
