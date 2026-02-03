@@ -28,17 +28,17 @@ const Dashboard = () => {
                         <div className="main-column">
                             <div className="top-row">
                                 <VisaCard/>
-                                <SendMoney/>
-                            </div>
+                                <CashFlow/>
+                            <SendMoney/>
+                            <QuickTransfer/>
+                            
+                            
+                        </div>
                             <StatisticsGrid/>
                             <Transaction/>
                         </div>
 
-                        {/* Sidebar Column (Quick actions/Charts) */}
-                        <div className="side-column">
-                            <QuickTransfer/>
-                            <CashFlow/>
-                        </div>
+                       
                     </div>
                 </section>
             </main>

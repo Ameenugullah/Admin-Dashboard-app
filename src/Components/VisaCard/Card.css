@@ -6,6 +6,10 @@
   aspect-ratio: 16 / 10;
   perspective: 1200px;
 }
+.visa-card {
+  display: grid;
+  justify-items: auto;
+}
 
 .visa-card-inner {
   position: relative;
