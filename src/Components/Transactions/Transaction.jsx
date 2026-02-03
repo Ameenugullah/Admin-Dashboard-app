@@ -2,7 +2,7 @@ import './Transaction.css';
 import Profile from '../../assets/profile2.jpg';
 import Paypal from '../../assets/paypal.png';
 import Paystack from '../../assets/paystack.png';
-import Flutterwave from '../../assets/Flutterwave.jpg';
+import Flutterwave from '../../assets/flutterwave.jpg';
 
 const transactions = [
   {
