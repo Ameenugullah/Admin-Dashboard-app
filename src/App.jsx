@@ -1,4 +1,5 @@
-import Dashboard from "./Dashboard"
+import Dashboard from "./Components/Dashboard"
+import Messages from "./Components/Messages/Message"
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
      <Dashboard/>
+     <Messages/>
     </>
   )
 }

@@ -92,12 +92,25 @@
 }
 
 /* Mobile adjustments */
+@media (max-width: 1024px) {
+  .transactions-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @media (max-width: 640px) {
   .transactions-card {
-    padding: 16px;
+    padding: 12px;
   }
 
   .transactions-table {
-    min-width: 560px;
+    min-width: 500px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 8px 6px;
+    font-size: 12px;
   }
 }

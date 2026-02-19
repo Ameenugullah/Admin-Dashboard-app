@@ -2,9 +2,16 @@
 
 .visa-card {
   width: 100%;
-  max-width: 380px;
+  max-width: 100%;
   aspect-ratio: 16 / 10;
   perspective: 1200px;
+}
+
+/* Tablet and desktop max width */
+@media (min-width: 768px) {
+  .visa-card {
+    max-width: 380px;
+  }
 }
 .visa-card {
   display: grid;

@@ -1,12 +1,12 @@
 import './Dashboard.css';
-import Navbar from '../Components/Navbar/Navbar';
-import Sidebar from '../Components/Sidebar';
-import VisaCard from '../Components/VisaCard/Card';
-import SendMoney from '../Components/SendMoney/SendMoney';
-import QuickTransfer from '../Components/QuickTransfer/QuickTransfer';
-import CashFlow from '../Components/CashFlow/CashFlow';
-import StatisticsGrid from '../Components/StatisticsGrid/StatisticsGrid';
-import Transaction from '../Components/Transactions/Transaction';
+import Navbar from '../Navbar/Navbar';
+import Sidebar from '../Sidebar';
+import VisaCard from '../VisaCard/Card';
+import SendMoney from '../SendMoney/SendMoney';
+import QuickTransfer from '../QuickTransfer/QuickTransfer';
+import CashFlow from '../CashFlow/CashFlow';
+import StatisticsGrid from '../StatisticsGrid/StatisticsGrid';
+import Transaction from '../Transactions/Transaction';
 import { useState } from 'react';
 
 const Dashboard = () => {
@@ -21,7 +21,6 @@ const Dashboard = () => {
             
             <main className={`main-content ${open ? 'shifted' : ''}`}>
                 <Navbar onMenuClick={() => setOpen(!open)} />
-                
                 <section className="dashboard-container">
                     {/* Main Content Area */}
                     <div className="content-grid">
