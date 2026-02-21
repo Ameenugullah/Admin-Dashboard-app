@@ -1,7 +1,7 @@
 .transactions-card {
   background: var(--card-bg);
-  border-radius: 18px;
-  padding: 20px;
+  border-radius: clamp(14px, 3vw, 18px);
+  padding: clamp(1rem, 3vw, 1.25rem);
   box-shadow: var(--shadow);
   width: 100%;
   box-sizing: border-box;
@@ -9,43 +9,49 @@
 
 /* Title */
 .transactions-card .title-sm {
-  font-size: 16px;
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
   font-weight: 600;
   color: var(--text-main);
-  margin-bottom: 16px;
+  margin-bottom: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 /* Table wrapper (mobile safety) */
 .transactions-table-wrapper {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius);
 }
 
 /* Table */
 .transactions-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 640px;
+  min-width: 600px;
 }
 
 .transactions-table th,
 .transactions-table td {
-  padding: 12px 10px;
+  padding: clamp(0.6rem, 2vw, 0.75rem) clamp(0.5rem, 1.5vw, 0.75rem);
   text-align: left;
-  font-size: 14px;
+  font-size: clamp(0.8rem, 1.5vw, 0.875rem);
   color: var(--text-main);
   white-space: nowrap;
 }
 
 .transactions-table thead th {
-  font-size: 12px;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
   font-weight: 500;
   color: var(--text-muted);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  background: var(--background);
+  position: sticky;
+  top: 0;
 }
 
 .transactions-table tbody tr {
   transition: background 0.2s ease;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .transactions-table tbody tr:hover {
@@ -54,25 +60,28 @@
 
 /* Avatar */
 .transaction-avatar {
-  width: 36px;
-  height: 36px;
+  width: clamp(30px, 5vw, 36px);
+  height: clamp(30px, 5vw, 36px);
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 /* Amount */
 .amount {
   font-weight: 600;
+  color: var(--text-main);
 }
 
 /* Status badge */
 .status-badge {
-  padding: 4px 10px;
+  padding: clamp(0.3rem, 1vw, 0.4rem) clamp(0.6rem, 2vw, 0.75rem);
   border-radius: 999px;
-  font-size: 12px;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
   font-weight: 500;
   text-transform: capitalize;
   display: inline-block;
+  white-space: nowrap;
 }
 
 /* Status colors */
@@ -97,20 +106,50 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+
+  .transactions-table {
+    min-width: 550px;
+  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .transactions-card {
-    padding: 12px;
+    padding: clamp(0.75rem, 2vw, 1rem);
   }
 
   .transactions-table {
     min-width: 500px;
+    font-size: 0.85rem;
   }
 
   .transactions-table th,
   .transactions-table td {
-    padding: 8px 6px;
-    font-size: 12px;
+    padding: clamp(0.5rem, 1.5vw, 0.65rem) clamp(0.4rem, 1vw, 0.6rem);
+  }
+
+  .transaction-avatar {
+    width: clamp(28px, 4vw, 32px);
+    height: clamp(28px, 4vw, 32px);
+  }
+}
+
+@media (max-width: 640px) {
+  .transactions-card {
+    padding: clamp(0.6rem, 1.5vw, 0.85rem);
+  }
+
+  .transactions-table {
+    min-width: 450px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: clamp(0.4rem, 1vw, 0.55rem) clamp(0.3rem, 0.75vw, 0.5rem);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+  }
+
+  .status-badge {
+    padding: clamp(0.25rem, 0.75vw, 0.35rem) clamp(0.5rem, 1.5vw, 0.65rem);
+    font-size: clamp(0.65rem, 1vw, 0.7rem);
   }
 }

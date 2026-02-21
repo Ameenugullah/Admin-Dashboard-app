@@ -1,19 +1,23 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: clamp(0.5rem, 2vw, 0.75rem);
     user-select: none;
+    white-space: nowrap;
 }
 
 .logo h1 {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     font-weight: 800;
     color: var(--text-main);
-    letter-spacing: -1px;
+    letter-spacing: clamp(-1.5px, -0.5vw, -1px);
+    margin: 0;
 }
 
 .logo-icon {
-    color: var(--primary); /* Uses your Orange */
+    color: var(--primary);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    flex-shrink: 0;
 }
 
 .primary-text {
@@ -24,5 +28,26 @@
 @media (min-width: 1025px) {
     .nav-logo {
         display: none !important;
+    }
+}
+
+/* Mobile logo sizing */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+    }
+
+    .logo-icon {
+        font-size: clamp(1rem, 2.5vw, 1.4rem);
+    }
+}
+
+@media (max-width: 640px) {
+    .logo h1 {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+    }
+
+    .logo-icon {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
     }
 }

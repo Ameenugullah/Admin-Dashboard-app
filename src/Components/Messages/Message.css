@@ -1,15 +1,20 @@
 .message {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  border-radius: 12px;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .message:hover {
   background: rgba(255, 255, 255, 0.05);
+  transform: translateX(2px);
+}
+
+.message:active {
+  transform: scale(0.98);
 }
 
 .message.unread {
@@ -17,50 +22,88 @@
 }
 
 .message-avatar {
-  width: 40px;
-  height: 40px;
+  width: clamp(32px, 6vw, 40px);
+  height: clamp(32px, 6vw, 40px);
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .message-content {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.2rem, 0.5vw, 0.3rem);
 }
 
 .message-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
 }
 
 .message-name {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
   color: #fff;
-}
-
-.message-time {
-  font-size: 0.75rem;
-  opacity: 0.6;
-}
-
-.message-text {
-  font-size: 0.85rem;
-  opacity: 0.75;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Mobile tweak */
-@media (max-width: 600px) {
+.message-time {
+  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+  opacity: 0.6;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.message-text {
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  opacity: 0.75;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
   .message {
-    padding: 0.6rem;
+    padding: clamp(0.4rem, 1.2vw, 0.6rem);
   }
 
   .message-avatar {
-    width: 36px;
-    height: 36px;
+    width: clamp(28px, 5vw, 36px);
+    height: clamp(28px, 5vw, 36px);
+  }
+
+  .message-name {
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  }
+
+  .message-time {
+    font-size: clamp(0.6rem, 1vw, 0.7rem);
+  }
+
+  .message-text {
+    font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .message {
+    padding: clamp(0.35rem, 1vw, 0.5rem);
+  }
+
+  .message-avatar {
+    width: clamp(24px, 4.5vw, 32px);
+    height: clamp(24px, 4.5vw, 32px);
+  }
+
+  .message-time {
+    display: none;
   }
 }

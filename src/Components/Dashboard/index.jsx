@@ -28,11 +28,11 @@ const Dashboard = () => {
                             <div className="top-row">
                                 <VisaCard/>
                                 <CashFlow/>
-                            <SendMoney/>
-                            <QuickTransfer/>
-                            
-                            
-                        </div>
+                            </div>
+                            <div className="second-row">
+                                <SendMoney/>
+                                <QuickTransfer/>
+                            </div>
                             <StatisticsGrid/>
                             <Transaction/>
                         </div>

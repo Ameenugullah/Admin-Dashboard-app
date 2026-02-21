@@ -10,11 +10,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: clamp(0.75rem, 3vw, 1rem);
   box-shadow: var(--shadow);
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Visible on mobile when open */
@@ -27,43 +29,52 @@
   .sidebar {
     transform: translateX(0);
     position: sticky;
+    top: 0;
   }
 }
 
 /* Top */
 .sidebar-top {
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 /* Navigation */
 .tabs {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: clamp(0.15rem, 1vw, 0.25rem);
   flex: 1;
 }
 
 .item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.65rem 0.75rem;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
+  padding: clamp(0.5rem, 1.5vw, 0.65rem) clamp(0.5rem, 2vw, 0.75rem);
   border-radius: var(--radius);
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   text-decoration: none;
   position: relative;
   transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item .icon {
-  width: 18px;
-  height: 18px;
+  width: clamp(16px, 3vw, 18px);
+  height: clamp(16px, 3vw, 18px);
+  flex-shrink: 0;
 }
 
 .item:hover {
   background: var(--primary-light);
   color: var(--primary);
+}
+
+.item:active {
+  transform: scale(0.98);
 }
 
 .item.active {
@@ -76,30 +87,35 @@
   margin-left: auto;
   background: var(--primary);
   color: #fff;
-  font-size: 0.7rem;
-  padding: 2px 6px;
+  font-size: clamp(0.6rem, 1.5vw, 0.7rem);
+  padding: clamp(2px, 1vw, 2px) clamp(4px, 2vw, 6px);
   border-radius: 999px;
+  flex-shrink: 0;
 }
 
 /* Footer */
 .sidebar-footer {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
   border-top: 1px solid var(--border-color);
-  padding-top: 1rem;
+  padding-top: clamp(0.75rem, 2vw, 1rem);
+  margin-top: auto;
 }
 
 .footer-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
   cursor: pointer;
-  padding: 0.5rem 0.6rem;
+  padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.6rem);
   border-radius: var(--radius);
   transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer-item:hover {
@@ -111,24 +127,31 @@
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.75rem;
+  gap: clamp(0.4rem, 2vw, 0.6rem);
+  margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
 }
 
 .user-profile img {
-  width: 36px;
-  height: 36px;
+  width: clamp(30px, 5vw, 36px);
+  height: clamp(30px, 5vw, 36px);
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .details .name {
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
   font-weight: 600;
   color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .details .role {
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
   color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

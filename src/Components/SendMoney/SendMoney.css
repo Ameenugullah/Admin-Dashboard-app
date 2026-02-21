@@ -5,26 +5,18 @@
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: clamp(0.8rem, 3vw, 1.2rem);
 }
 
-/* Tablet and desktop */
 @media (min-width: 768px) {
   .send-money {
     max-width: 420px;
   }
 }
 
-/* Mobile: reduce gaps */
-@media (max-width: 640px) {
-  .send-money {
-    gap: 1rem;
-  }
-}
-
 /* Title */
 .send-money .title {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   font-weight: 600;
   color: var(--text-main);
 }
@@ -34,25 +26,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1rem);
   flex-wrap: wrap;
 }
 
-/* Mobile: stack vertically */
 @media (max-width: 640px) {
   .balance-row {
     flex-direction: column;
     align-items: flex-start;
+    gap: clamp(0.6rem, 1.5vw, 1rem);
   }
 }
 
 .balance-info h1 {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 5vw, 1.6rem);
   font-weight: 700;
+  margin: 0;
 }
 
 .stat {
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  color: var(--text-muted);
 }
 
 .success-text {
@@ -64,118 +58,151 @@
 .add-fund-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 0.9rem;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
+  padding: clamp(0.4rem, 1vw, 0.55rem) clamp(0.6rem, 2vw, 0.9rem);
   background: var(--primary-light);
   border: 1px solid var(--border-color);
   border-radius: 10px;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
   white-space: nowrap;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .add-fund-btn:hover {
   background: var(--primary);
   color: #fff;
+  border-color: var(--primary);
+}
+
+.add-fund-btn:active {
+  transform: scale(0.95);
 }
 
 .card-icon {
-  width: 26px;
+  width: clamp(20px, 4vw, 26px);
+  flex-shrink: 0;
 }
 
 /* Amount card */
 .amount-card {
   background: var(--background);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: clamp(0.75rem, 2.5vw, 1rem);
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: clamp(0.6rem, 1.5vw, 0.8rem);
 }
 
 .input-header {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: clamp(0.4rem, 1.5vw, 0.6rem);
+  flex-wrap: wrap;
 }
 
 /* Small profile images (sender & receiver) */
 .profile-sm img {
-  width: 32px;
-  height: 32px;
+  width: clamp(28px, 5vw, 32px);
+  height: clamp(28px, 5vw, 32px);
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
 
-
 .input-group {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: clamp(0.4rem, 1.5vw, 0.6rem);
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 0.55rem 0.75rem;
+  padding: clamp(0.4rem, 1.5vw, 0.55rem) clamp(0.5rem, 1.5vw, 0.75rem);
+  transition: border-color 0.2s ease;
+}
+
+.input-group:focus-within {
+  border-color: var(--primary);
 }
 
 .currency-symbol {
   font-weight: 600;
   color: var(--text-muted);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  flex-shrink: 0;
 }
 
 .input-group input {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
   min-width: 0;
+  font-family: inherit;
+}
+
+.input-group input::placeholder {
+  color: var(--text-muted);
 }
 
 .flag-group {
   display: flex;
-  gap: 0.35rem;
+  gap: clamp(0.2rem, 1vw, 0.35rem);
+  flex-shrink: 0;
 }
 
 .flag {
-  width: 22px;
-  height: 22px;
+  width: clamp(18px, 3vw, 22px);
+  height: clamp(18px, 3vw, 22px);
   border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Receiver */
 /* Receiver */
 .receiver-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6rem 0.75rem;
+  padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.5rem, 1.5vw, 0.75rem);
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  gap: 0.75rem;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  transition: border-color 0.2s ease;
 }
 
+.receiver-card:hover {
+  border-color: var(--primary-light);
+}
 
 .receiver-info {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: clamp(0.4rem, 1.5vw, 0.6rem);
+  min-width: 0;
 }
 
 .receiver-info .name {
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   font-weight: 500;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .add-btn {
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
+  width: clamp(28px, 5vw, 32px);
+  height: clamp(28px, 5vw, 32px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   border: none;
   background: var(--primary-light);
   cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .add-btn:hover {
@@ -183,21 +210,34 @@
   color: #fff;
 }
 
+.add-btn:active {
+  transform: scale(0.9);
+}
+
 /* CTA button */
 .send-money-btn {
-  margin-top: 0.5rem;
+  margin-top: clamp(0.4rem, 1.5vw, 0.5rem);
   width: 100%;
-  padding: 0.75rem;
+  padding: clamp(0.6rem, 2vw, 0.75rem);
   background: var(--primary);
   color: #fff;
   border: none;
   border-radius: 12px;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .send-money-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 120, 45, 0.3);
+}
+
+.send-money-btn:active {
+  transform: translateY(0);
+}
   background: var(--primary-hover);
 }
 
